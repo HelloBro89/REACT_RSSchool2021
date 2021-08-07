@@ -1,12 +1,11 @@
 /* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import s from './styles/app.component.css';
-import swt from './styles/switcherStyle.css'
+// import swt from './styles/switcherStyle.css'
 
 class MyComponent extends Component {
   render() {
     return (<div className={s.wrapper}>
-{console.log(swt)}
         <div className={s.form}>
 
             <form className="name" /* event */>
