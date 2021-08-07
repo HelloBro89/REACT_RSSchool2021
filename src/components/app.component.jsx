@@ -1,62 +1,45 @@
-/* eslint-disable class-methods-use-this */
-import React, { Component } from 'react';
+/* eslint-disable no-console */
+import React/* , { useState} */ from 'react';
 import s from './styles/app.component.css';
-// import swt from './styles/switcherStyle.css'
 
-class MyComponent extends Component {
-  render() {
-    return (<div className={s.wrapper}>
+export const App = () => {
+  // const [firstName, setFirstName] = React.useState(1);
+  const [count, setCount] = React.useState(0);
+
+  // const handlerSubmit = () =>{
+  //   console.log('TEST')
+  // }
+
+  return (
+
+    
+    <div className={s.wrapper}>
+ <h3>Count = {count}</h3>
+          <button onClick={() => setCount(count + 1)}>
+            Увеличить
+          </button>
+
+      {/* <button onClick={handlerSubmit}/> */}
+      {/* <input type="button" value="send" onClick={() => setFirstName("Pasha")} /> */}
+      {/* <input type="button" value="sdfsdfs" onClick={test} />
+
         <div className={s.form}>
 
-            <form className="name" /* event */>
-                <label className='item' htmlFor='firstname'>
-                    name:
-                    <input type="text" name="firstname" value='pasha' />
-                </label>
-            </form>
+            <form className="name" onSubmit={test}>
 
-            <form className="name" /* event */>
-                <label className='item' htmlFor='lastname'>
-                    name:
-                    <input type="text" name="lastname" value='valoshyn' />
-                </label>
-            </form>
+                <label className='item' htmlFor='firstName'>
 
-        </div>
-
-
-
-        {/* <div className={s.form}>
-       
-                <input className={s.input} type="text"  placeholder='Enter your name...'/>
-                <input type="text"  placeholder='Enter your lastname...'/>
-                <input type='date'/>
-                <select name="Country" id="">
-                    <option>Сhoose country</option>
-                    <option>Belarus</option>
-                    <option>Russia</option>
-                    <option>Poland</option>
-                    <option>Ukrain</option>
-                </select>
-
-                <div>
-                    <input type="checkbox"/>
-                    <span>I agree to the processing of personal data</span>
-                </div>
-
-                <div>
-                    <span>Male: </span> 
-                    <label className={swt.switch}>
-                    <input type="checkbox" checked/>
-                    <span className={swt.slider}></span>
+                    name:<input type="text" name='firstName value' value={firstName} onChange={(event) => setFirstName(event.target.value)} />
                     </label>
+               <div>
+
+                   <input className={s.btn} type="submit" value="Send" />
+
                 </div>
-           </div>  */}
-        </div>
 
-    );
-  }
-}
+                   </form>
 
-
-export default MyComponent;
+         </div> */}
+    </div>
+  );
+};
