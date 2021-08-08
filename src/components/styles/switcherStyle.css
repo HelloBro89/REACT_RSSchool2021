@@ -1,49 +1,35 @@
-.switch {
+.toggle {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 24px;
+  width: 70px;
+  height: 20px;
+  background-color: rgb(231, 16, 185);
+  border-radius: 30px;
+  border: 2px solid gray;
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
+.toggle:after {
   content: '';
-  height: 16px;
-  width: 16px;
-  left: 10px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #d11489;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Закругленные ползунки */
-.slider {
-  border-radius: 34px;
-}
-
-.slider:before {
+  position: absolute;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
+  background-color: gray;
+  top: 0px;
+  left: 1px;
+  transition: all 0.5s;
 }
+
+.checkbox:checked + .toggle::after {
+  left: 49px;
+}
+
+.checkbox:checked + .toggle {
+  background-color: rgb(20, 33, 204);
+}
+
+.checkbox {
+  display: none;
+}
+
+/* ******************** */
