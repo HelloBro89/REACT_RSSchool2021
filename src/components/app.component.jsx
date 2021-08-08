@@ -4,28 +4,21 @@ import s from './styles/app.component.css';
 
 export const App = () => {
   // const [firstName, setFirstName] = React.useState(1);
-  const [count, setCount] = React.useState(0);
+  const [firstName, setFirstName] = React.useState(0);
 
-  // const handlerSubmit = () =>{
-  //   console.log('TEST')
-  // }
+  const handlerSubmit = (event) =>{
+    event.preventDefault();
+
+    console.log('TEST');
+  }
 
   return (
 
-    
     <div className={s.wrapper}>
- <h3>Count = {count}</h3>
-          <button onClick={() => setCount(count + 1)}>
-            Увеличить
-          </button>
-
-      {/* <button onClick={handlerSubmit}/> */}
-      {/* <input type="button" value="send" onClick={() => setFirstName("Pasha")} /> */}
-      {/* <input type="button" value="sdfsdfs" onClick={test} />
-
+ 
         <div className={s.form}>
 
-            <form className="name" onSubmit={test}>
+            <form className="name" onSubmit={handlerSubmit}>
 
                 <label className='item' htmlFor='firstName'>
 
@@ -39,7 +32,7 @@ export const App = () => {
 
                    </form>
 
-         </div> */}
+         </div> 
     </div>
   );
 };
