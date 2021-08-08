@@ -1,0 +1,17 @@
+.container {
+  margin: 0 auto;
+  margin-top: 10px;
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  /* border: 2px solid black; */
+}
+
+.card {
+  margin-top: 20px;
+  background-color: rgba(128, 128, 128, 0.253);
+  line-height: 1.3em;
+  margin-left: 20px;
+  padding: 0px 15px 5px 15px;
+}

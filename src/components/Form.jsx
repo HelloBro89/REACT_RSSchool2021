@@ -1,24 +1,28 @@
 /* eslint-disable no-console */
 import React, {useState} from 'react';
-import s from './styles/app.component.css';
-import swt from './styles/switcherStyle.css'
+import s from './styles/formStyles.css';
+import swt from './styles/switcherStyle.css';
 
-export const App = () => {
+export const Form = ({setFormValue}) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [postCode, setPostCode] = useState('');
-  const [birthDate, setBirthDate] = useState();
+  const [birthDate, setBirthDate] = useState('');
   const [country, setCountry] = useState('');
+  const [agree, setAgree] = useState(false);
+  const [gender, setGender] = useState(false);
+  const gen = (gender === true) ? "female" : "male";
 
   const handlerSubmit = (event) =>{
     event.preventDefault();
-
-    console.log(firstName);
+    setFormValue(state => [...state, {  firstName, lastName, postCode, birthDate, country, agree, gen}]);
+    console.log(`${firstName} -- ${lastName} -- ${postCode} -- ${birthDate} -- ${country} -- ${agree} -- ${gen} `);
   }
 
   return (
+    
             <form  className={s.form} onSubmit={handlerSubmit}>
-
+              <div className={s.block}>
                 <label className={s.label} htmlFor='firstName'>
                    Name:
                     <div>
@@ -61,12 +65,14 @@ export const App = () => {
                 </label>
 
                 <label className={s.label} htmlFor='agreement'>
-                    <input name='agreement' type="checkbox"/>
+                    <input name='agreement' type="checkbox" value={agree} onChange={() => setAgree(prev => !prev)} />
                     I agree to the processing of personal data
                 </label>
-
-                <div style={{marginTop: "10px"}}>Male:</div>
-                <input type="checkbox" id="switch" name='switch' className={swt.checkbox}/>
+    
+                <div style={{marginTop: "10px"}}>Choose gender:
+                  <br />{gen}
+                </div>
+                <input type="checkbox" id="switch" name='switch' className={swt.checkbox} value={gender}  onChange={() => setGender((prev) => !prev)} />
                
                 <label htmlFor="switch" className={swt.toggle}></label>
                
@@ -74,7 +80,7 @@ export const App = () => {
                <div style={{marginTop: "20px"}}>
                    <input className={s.btn} type="submit" value="Send" />
                 </div>
-
+           </div>
                    </form>
 
   );
