@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import s from './styles/formStyles.css';
 import swt from './styles/switcherStyle.css';
 
-export const Form = ({setFormValue}) => {
+export const Form = (  {setFormValue}) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [postCode, setPostCode] = useState('');
@@ -12,17 +12,18 @@ export const Form = ({setFormValue}) => {
   const [agree, setAgree] = useState(false);
   const [gender, setGender] = useState(false);
   const gen = (gender === true) ? "female" : "male";
-
+  
   const handlerSubmit = (event) =>{
     event.preventDefault();
     setFormValue(state => [...state, {  firstName, lastName, postCode, birthDate, country, agree, gen}]);
     console.log(`${firstName} -- ${lastName} -- ${postCode} -- ${birthDate} -- ${country} -- ${agree} -- ${gen} `);
+    console.log(document.getElementById('main').offsetLeft);
   }
 
   return (
     
             <form  className={s.form} onSubmit={handlerSubmit}>
-              <div className={s.block}>
+              
                 <label className={s.label} htmlFor='firstName'>
                    Name:
                     <div>
@@ -69,6 +70,8 @@ export const Form = ({setFormValue}) => {
                     I agree to the processing of personal data
                 </label>
     
+                <div style={{marginLeft: "20px"}}>
+
                 <div style={{marginTop: "10px"}}>Choose gender:
                   <br />{gen}
                 </div>
@@ -80,7 +83,7 @@ export const Form = ({setFormValue}) => {
                <div style={{marginTop: "20px"}}>
                    <input className={s.btn} type="submit" value="Send" />
                 </div>
-           </div>
+              </div>
                    </form>
 
   );
