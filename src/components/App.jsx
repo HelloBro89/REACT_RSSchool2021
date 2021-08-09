@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, {useState, useEffect} from 'react';
 import {Form} from './Form.jsx';
 import {Cards} from './Cards.jsx';
