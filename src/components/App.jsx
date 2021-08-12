@@ -8,7 +8,7 @@ export const App = () =>{
     const [formValue, setFormValue] = useState([]);
 
     useEffect(() => {    
-        console.log(document.getElementById('main').offsetLeft);
+        // console.log(document.getElementById('main').offsetLeft);
       });
 
     return (
