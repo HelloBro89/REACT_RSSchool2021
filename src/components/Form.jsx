@@ -17,12 +17,11 @@ export const Form = (  {setFormValue}) => {
 
   useEffect(() => {
     validate();
-    console.log(firstName === undefined);
-    
-  }, [firstName, lastName, postCode, birthDate, agree, country]);
+  }, [firstName, lastName, postCode, birthDate, country, agree]);
 
   const validate = () => {
     setError({});
+    console.log(`${agree} after render`);
     if (!agree) {
       setError((state) => ({...state, agree}));
     }
@@ -47,11 +46,24 @@ export const Form = (  {setFormValue}) => {
 
   const handlerSubmit = (event) => {
     event.preventDefault();
-
+    
     if (Object.keys(error).length === 0){
-    setFormValue(state => [...state, {  firstName, lastName, postCode, birthDate, country, agree, gen}]);
+    setFormValue(state => [...state, { agree, firstName, lastName, postCode, birthDate, country, gen}]);
     // console.log(`${firstName} -- ${lastName} -- ${postCode} -- ${birthDate} -- ${country} -- ${agree} -- ${gen} `);
+    clear();
     }
+    
+  }
+
+  const clear = () => {
+     setAgree(false);
+    //  console.log(`${agree} before render`);
+     setFirstName('');
+     setLastName('');
+     setPostCode('');
+     setBirthDate('');
+     setCountry('');
+     setGender(false);
   }
 
   return (
@@ -100,7 +112,7 @@ export const Form = (  {setFormValue}) => {
                 </label>
 
                 <label className={s.label} htmlFor='agreement'>
-                    <input name='agreement' type="checkbox" value={agree} onChange={() => setAgree(prev => !prev)} />
+                    <input name='agreement' type="checkbox" checked={agree} onChange={() => setAgree( prev => !prev)} />
                     I agree to the processing of personal data {error.agree !== undefined && <span className={s.error}>* agree shoud be check</span>}
                 </label>
     
@@ -109,7 +121,7 @@ export const Form = (  {setFormValue}) => {
                 <div style={{marginTop: "10px"}}>Choose gender:
                   <br />{gen}
                 </div>
-                <input type="checkbox" id="switch" name='switch' className={swt.checkbox} value={gender}  onChange={() => setGender((prev) => !prev)} />
+                <input type="checkbox" id="switch" name='switch' className={swt.checkbox} checked={gender}  onChange={() => setGender((prev) => !prev)} />
                
                 <label htmlFor="switch" className={swt.toggle}></label>
                

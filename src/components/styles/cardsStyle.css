@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 300px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .card {
@@ -18,5 +18,5 @@
 }
 
 .main {
-  border: 2px solid rgb(173, 47, 47);
+  /* border: 2px solid rgb(173, 47, 47); */
 }

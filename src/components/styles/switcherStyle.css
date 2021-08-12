@@ -3,7 +3,7 @@
   display: inline-block;
   width: 70px;
   height: 20px;
-  background-color: rgb(231, 16, 185);
+  background-color: rgb(20, 33, 204);
   border-radius: 30px;
   border: 2px solid gray;
 }
@@ -25,7 +25,7 @@
 }
 
 .checkbox:checked + .toggle {
-  background-color: rgb(20, 33, 204);
+  background-color: rgb(231, 16, 185);
 }
 
 .checkbox {

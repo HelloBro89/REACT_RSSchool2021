@@ -12,7 +12,7 @@ export const App = () =>{
       });
 
     return (
-        <div id='main' className={cs.main}>
+        <div id='main' >
             
             <Form setFormValue={setFormValue}/>
            <div className={cs.container}>

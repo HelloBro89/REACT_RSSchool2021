@@ -1,7 +1,7 @@
 .form {
-  height: 400px;
+  height: 430px;
   width: 350px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   background-color: rgba(50, 95, 219, 0.452);
   margin: 0 auto;
   margin-top: 30px;
