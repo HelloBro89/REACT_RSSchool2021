@@ -7,6 +7,7 @@
     "singleQuote": true
   },
   "scripts": {
+    "start": "webpack serve --inline --hot",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "prod": "cross-env NODE_ENV=production webpack --mode production",
     "watch": "webpack --mode development --watch",

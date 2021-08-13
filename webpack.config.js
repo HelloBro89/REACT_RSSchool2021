@@ -20,6 +20,11 @@ module.exports = {
     new CleanWebpackPlugin(),
   ],
   devtool: 'source-map',
+  devServer: {
+    historyApiFallback: true,
+    port: 3000,
+    open: true,
+  },
   module: {
     rules: [
       {
