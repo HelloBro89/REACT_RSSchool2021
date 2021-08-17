@@ -7,6 +7,7 @@ export const Articles = ({articles, page, onChangePage}) => {
 
     useEffect(() => {
         setAPage(page);
+        console.log("TEST");
       }, [page]);
 
     
@@ -17,7 +18,7 @@ export const Articles = ({articles, page, onChangePage}) => {
         if (matchedValue) {
           const newValue = +matchedValue[0];
           onChangePage(newValue);
-          setAPage(newValue);
+        //   setAPage(newValue);
         } else {
             setAPage('');
         }
@@ -53,9 +54,9 @@ export const Articles = ({articles, page, onChangePage}) => {
     }
         </tbody>
     </table> : null}
-<label htmlFor="getPage">
-    <input name='getPage' type='text' value={aPage} onChange={e => {handleChange(e)}} />
-</label>
+    <label htmlFor="getPage">
+        <input name='getPage' type='text' value={aPage} onChange={e => {handleChange(e)}} />
+    </label>
     
 </div>
     )
