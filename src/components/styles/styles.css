@@ -1,0 +1,17 @@
+.headerOfTable {
+  color: blue;
+
+  border: 2px solid rgb(46, 16, 16);
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.firstTD {
+  border-left: 0px solid white;
+}
+
+td {
+  border-left: 1px solid blue;
+}
