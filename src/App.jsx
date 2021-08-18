@@ -1,46 +1,21 @@
-import React, { useState } from 'react';
-import axi from './components/services/api.jsx';
-import {Articles} from './components/Articles.jsx';
+import React from "react";
+import {
+    BrowserRouter as Router, Switch, Route
+} from "react-router-dom";
+import { Dashboard } from './components/Dashboard.jsx';
+import { About } from "./components/About.jsx";
+import { NotFound } from "./components/NotFound.jsx";
+// import { Test } from './components/Test.jsx';
 
-const myKey = 'df3b0e4161374d6d9c5de1b83b9d7838';
+export const App = () => (
 
-export const App =  () => {
+    <Router>
+        <Switch>
+            <Route exact path="/" component={Dashboard} />
+            <Route exact path="/about/" component={About} />
 
-  const [searchVal, setSerchVal] = useState('');
-  const [artcls, setArtcls] = useState([]);
-  const [sortBy, setSortBy] = useState('relevancy');
-  const [page, setPage] = useState(1);
+            <Route component={NotFound} />
+        </Switch>
+    </Router>
 
-  const sendReq = async (e) => {
-    e.preventDefault();
-    const res = await axi.get(`v2/everything?q=${searchVal}&apiKey=${myKey}&sortBy=${sortBy}&pageSize=5&page=${page}`);
-    setArtcls(res.data.articles);
-  }
-
-  return(
-    <div>
-
-      <form action="" onSubmit={(e) => {sendReq(e)}}>
-      <div style={{marginBottom: '10px', marginLeft: '10%'}}>
-        <input style={{height: '50px'}} type="search" value={searchVal} autoComplete="off" placeholder="Search here..." name="search" onChange={(e) => setSerchVal(e.target.value)} />
-        <button style={{height: '50px',width: '60px' , paddingBottom: '1px'}}  type="submit">Search</button>
-
-        <label  htmlFor='sorting'>
-                    <select name="sorting" id="sorting" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-                      <option>relevancy</option>
-                      <option>popularity</option>
-                      <option>publishedAt</option>
-                    </select>
-         </label>
-       </div>
-      </form>
-    <div> 
-      <Articles articles={artcls} page={page} onChangePage={(pageFromInput) => setPage(pageFromInput)} />
-    </div>
-
-  </div>
-  )
-}
-
-  
- 
+)
