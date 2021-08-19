@@ -1,18 +1,17 @@
-.headerOfTable {
-  color: blue;
+.column {
+  display: flex;
+  justify-content: space-between;
 
-  border: 2px solid rgb(46, 16, 16);
+  font-size: 20px;
+  margin-top: 20px;
 }
 
-.table {
-  border-collapse: collapse;
-  font-size: 20px
+.string{
+  border: 1px solid blue;
+  width: 16.6%;
 }
 
-.firstTD {
-  border-left: 0px solid white;
-}
-
-td {
-  border-left: 1px solid blue;
+span {
+  color: rgb(8, 114, 114);
+  font-size: 25px;
 }

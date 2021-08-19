@@ -1,25 +1,29 @@
-import React from 'react';
-import { NavLink, Switch, Route, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Switch, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { Dashboard } from './Dashboard.jsx';
 import { About } from "./About.jsx";
+import { Details } from "./Details.jsx";
 import { NotFound } from "./NotFound.jsx";
+import { Navigate } from './Navigate.jsx';
 
-import './animation.css';
-// import s from './test.css'
-
-
+import './styles/animation.css';
 
 export const Header = () => {
     const location = useLocation();
+    const [data, setData] = useState([]);
+
+    //     const handleHeader = (e) => {
+    // 
+    //     }
 
     return (
+
         <div style={{ fontSize: '30px' }}>
-            <nav>
-                <NavLink style={{ marginLeft: '40px' }} activeStyle={{ color: "green", fontWeight: "bold" }} exact to='/' /* onClick={() => handleHome()} */> Home </NavLink>
-                <NavLink style={{ marginLeft: '40px' }} activeStyle={{ color: "green", fontWeight: "bold" }} to='/about' /* onClick={() => handleAbout()} */> About </NavLink>
-            </nav>
+            {/* {console.log(data)} */}
+            <Navigate arrElem={data} />
+
             <TransitionGroup>
                 <CSSTransition
                     key={location.key}
@@ -28,15 +32,28 @@ export const Header = () => {
                         appear: 500,
                         enter: 300,
                         exit: 0,
-                    }}>
+                    }}
+                    unmountOnExit>
 
                     <Switch>
-                        <Route exact path="/" component={Dashboard} />
-                        <Route exact path="/about/" component={About} />
+                        <Route exact path="/"  >
+                            <Dashboard dataElem={(arrElem) => setData(arrElem)} />
+                        </Route>
+
+                        <Route exact path="/about/"  >
+                            <About />
+                        </Route>
+
+                        <Route exact path='/details/:id'>
+                            <Details dataEl={data} />
+                        </Route>
+
                         <Route component={NotFound} />
+
                     </Switch>
                 </CSSTransition >
             </TransitionGroup>
-        </div >
+        </div>
+
     )
 }

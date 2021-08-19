@@ -4,7 +4,7 @@ import { Articles } from './Articles.jsx';
 
 const myKey = 'df3b0e4161374d6d9c5de1b83b9d7838';
 
-export const Dashboard = () => {
+export const Dashboard = ({ dataElem }) => {
 
   const [searchVal, setSerchVal] = useState('');
   const [artcls, setArtcls] = useState([]);
@@ -14,12 +14,16 @@ export const Dashboard = () => {
   const sendReq = async (e) => {
     e.preventDefault();
     const res = await axi.get(`v2/everything?q=${searchVal}&apiKey=${myKey}&sortBy=${sortBy}&pageSize=5&page=${page}`);
+    // console.log(res.data.articles)
     setArtcls(res.data.articles);
+    // dataElem(res.data.articles);
+    dataElem(res.data.articles);
   }
 
   return (
-    <div style={{ marginTop: '40px' }}>
 
+    <div style={{ marginTop: '40px' }}>
+      {/* {console.log(artcls)} */}
       <form action="" onSubmit={(e) => { sendReq(e) }}>
         <div style={{ marginBottom: '10px', marginLeft: '10%' }}>
           <input style={{ height: '50px' }} type="search" value={searchVal} autoComplete="off" placeholder="Search here..." name="search" onChange={(e) => setSerchVal(e.target.value)} />
