@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Switch, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
@@ -14,15 +14,11 @@ export const Header = () => {
     const location = useLocation();
     const [data, setData] = useState([]);
 
-    //     const handleHeader = (e) => {
-    // 
-    //     }
-
     return (
 
         <div style={{ fontSize: '30px' }}>
-            {/* {console.log(data)} */}
-            <Navigate arrElem={data} />
+
+            <Navigate />
 
             <TransitionGroup>
                 <CSSTransition

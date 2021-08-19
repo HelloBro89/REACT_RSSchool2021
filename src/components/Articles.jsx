@@ -42,7 +42,7 @@ export const Articles = ({ articles, page, onChangePage }) => {
                     articles.map((item, ind) =>
                         <div key={ind}>
                             <nav >
-                                <NavLink style={{ textDecoration: 'none', color: 'black' }} activeStyle={{ textDecoration: 'none' }} to={`details/${item.source.id}`}>
+                                <NavLink style={{ textDecoration: 'none', color: 'black' }} activeStyle={{ textDecoration: 'none' }} to={`details/${item.title}`}>
                                     <div className='column' id={ind} >
                                         <div className='string'>{item.author}</div>
                                         <div className='string'>{item.title}</div>

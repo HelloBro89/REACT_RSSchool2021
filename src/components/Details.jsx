@@ -10,7 +10,7 @@ export const Details = ({ dataEl }) => {
         {/* {console.log(dataEl[0].source.id)} */}
         {
 
-            dataEl.filter(elem => elem.source.id === id).map((item, ind) => (
+            dataEl.filter(elem => elem.title === id).map((item, ind) => (
                 <div key={ind} style={{ fontSize: "20px" }}>
                     <div> <span>Author:</span>  {item.author}</div>
                     <div> <span>Tittle:</span>  {item.title}</div>
