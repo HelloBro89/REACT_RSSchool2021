@@ -53,10 +53,11 @@ export const Articles = ({ articles, page, onChangePage }) => {
                     }
                 </tbody>
             </table> : null}
-            <label htmlFor="getPage">
-                <input name='getPage' type='text' value={aPage} onChange={e => { handleChange(e) }} />
-            </label>
-
+            <div style={{ margin: '50px 0px 0px 80px' }}>
+                <label htmlFor="getPage">
+                    <input style={{ width: '50px', borderColor: 'red' }} name='getPage' type='text' value={aPage} onChange={e => { handleChange(e) }} />
+                </label>
+            </div>
         </div>
     )
 }

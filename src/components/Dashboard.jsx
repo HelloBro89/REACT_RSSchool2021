@@ -18,7 +18,7 @@ export const Dashboard = () => {
   }
 
   return (
-    <div>
+    <div style={{ marginTop: '40px' }}>
 
       <form action="" onSubmit={(e) => { sendReq(e) }}>
         <div style={{ marginBottom: '10px', marginLeft: '10%' }}>
@@ -34,7 +34,7 @@ export const Dashboard = () => {
           </label>
         </div>
       </form>
-      <div>
+      <div >
         <Articles articles={artcls} page={page} onChangePage={(pageFromInput) => setPage(pageFromInput)} />
       </div>
 
