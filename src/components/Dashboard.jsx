@@ -26,7 +26,7 @@ export const Dashboard = () => {
           <button style={{ height: '50px', width: '60px', paddingBottom: '1px' }} type="submit">Search</button>
 
           <label htmlFor='sorting'>
-            <select name="sorting" id="sorting" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+            <select name="sorting" /* id="sorting" */ value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
               <option>relevancy</option>
               <option>popularity</option>
               <option>publishedAt</option>

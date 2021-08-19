@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import s from './styles/styles.css';
+import './styles/styles.css';
+// import s from './styles/styles.css';
 
 export const Articles = ({ articles, page, onChangePage }) => {
 
@@ -25,9 +26,9 @@ export const Articles = ({ articles, page, onChangePage }) => {
 
     return (
         <div>
-            {articles.length ? <table className={s.table} >
+            {articles.length ? <table className='table' >
                 <tbody>
-                    <tr className={s.headerOfTable}>
+                    <tr className='headerOfTable'>
                         <td >Author</td>
                         <td>Tittle</td>
                         <td>Description</td>
@@ -40,7 +41,7 @@ export const Articles = ({ articles, page, onChangePage }) => {
                     {
                         articles.map((item, ind) => (
                             <tr key={ind}>
-                                <td className={s.firstTD}>{item.author}</td>
+                                <td className='firstTD'>{item.author}</td>
                                 <td>{item.title}</td>
                                 <td>{item.description}</td>
                                 <td>{item.publishedAt}</td>
