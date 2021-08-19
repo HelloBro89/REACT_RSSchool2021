@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { CSSTransition } from 'react-transition-group';
-// import './test.css';
-import s from './test.css'
+import './animation.css';
+// import s from './test.css'
 
 
 
@@ -18,7 +18,6 @@ export const Header = () => {
 
     return (
         <div style={{ fontSize: '30px' }}>
-            <div className='eee' id='test'>TEST</div>
             <nav>
                 <NavLink style={{ marginLeft: '40px' }} activeStyle={{ color: "green", fontWeight: "bold" }} exact to='/' onClick={(e) => test(e)}> Home </NavLink>
                 <NavLink style={{ marginLeft: '40px' }} activeStyle={{ color: "green", fontWeight: "bold" }} to='/about' onClick={(e) => test(e)}> About </NavLink>
@@ -27,9 +26,9 @@ export const Header = () => {
             <CSSTransition
                 in={show}
                 timeout={1000}
-                className={{ ...s.alert }}
+                classNames='alert'
                 unmountOnExit>
-                <h1>HELLO world</h1>
+                <h1>Test animation</h1>
             </CSSTransition>
 
         </div >
