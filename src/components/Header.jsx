@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink, Switch, Route } from "react-router-dom";
 import { CSSTransition } from 'react-transition-group';
+
+import { Dashboard } from './Dashboard.jsx';
+import { About } from "./About.jsx";
+import { NotFound } from "./NotFound.jsx";
+
 import './animation.css';
 // import s from './test.css'
 
@@ -28,8 +33,16 @@ export const Header = () => {
                 timeout={1000}
                 classNames='alert'
                 unmountOnExit>
-                <h1>Test animation</h1>
+
+                <Switch>
+                    <Route exact path="/" component={Dashboard} />
+                    <Route exact path="/about/" component={About} />
+                    <Route component={NotFound} />
+                </Switch>
+                {/* <h1>Test animation</h1> */}
             </CSSTransition>
+
+
 
         </div >
     )
