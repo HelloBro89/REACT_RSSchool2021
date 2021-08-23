@@ -14,7 +14,7 @@ export const Dashboard = ({ dataElem }) => {
   const sendReq = async (e) => {
     e.preventDefault();
     const res = await axi.get(`v2/everything?q=${searchVal}&apiKey=${myKey}&sortBy=${sortBy}&pageSize=5&page=${page}`);
-    // console.log(res.data.articles)
+    console.log(res)
     setArtcls(res.data.articles);
     // dataElem(res.data.articles);
     dataElem(res.data.articles);
