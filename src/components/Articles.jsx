@@ -27,7 +27,7 @@ export const Articles = ({ articles, page, onChangePage }) => {
 
     return (
         <div>
-            {articles.length ? <div  >
+            {articles.length ? <div>
 
                 <div className='column'>
                     <div className='string'>Author</div>
