@@ -1,33 +1,15 @@
-import React/* , { useEffect, useState } */ from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import './styles/styles.css';
 
-export const Articles = ({ articles /* , page, */ /* onChangePage */ }) => {
+export const Articles = () => {
 
-    // const [aPage, setAPage] = useState('');
-
-    // useEffect(() => {
-    //     setAPage(page);
-    // }, [page]);
-    const test = () => console.log("YO")
-
-    // const handleChange = (e) => {
-    //     e.preventDefault();
-    //     const { value } = e.target;
-    //     const regexp = /\d+/;
-    //     const matchedValue = value.match(regexp);
-    //     if (matchedValue) {
-    //         const newValue = +matchedValue[0];
-    //         onChangePage(newValue);
-    //         setAPage(newValue);
-    //     } else {
-    //         setAPage('');
-    //     }
-    // };
+    const response = useSelector((state) => state.articles.data);
 
     return (
         <div>
-            {articles.length ? <div>
+            {response.length ? <div>
 
                 <div className='column'>
                     <div className='string'>Author</div>
@@ -39,7 +21,7 @@ export const Articles = ({ articles /* , page, */ /* onChangePage */ }) => {
                 </div>
 
                 {
-                    articles.map((item, ind) =>
+                    response.map((item, ind) =>
                         <div key={ind}>
                             <nav >
                                 <NavLink style={{ textDecoration: 'none', color: 'black' }} activeStyle={{ textDecoration: 'none' }} to={`details/${item.title}`}>
@@ -58,14 +40,8 @@ export const Articles = ({ articles /* , page, */ /* onChangePage */ }) => {
                         </div>
                     )
                 }
-
             </div> : null
             }
-            {/* <div style={{ margin: '50px 0px 0px 80px' }}>
-                <label htmlFor="getPage">
-                    <input style={{ width: '50px', borderColor: 'red' }} name='getPage' type='text' value={aPage} onChange={e => { handleChange(e) }} />
-                </label>
-            </div> */}
         </div >
     )
 }

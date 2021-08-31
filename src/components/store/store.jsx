@@ -8,9 +8,3 @@ import { rootReducer } from '../redux/reducers/index.jsx';
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 export default store
-
-
-// const store = configureStore({
-//     reducer: rootReducer,
-//     devTools: true,
-// })

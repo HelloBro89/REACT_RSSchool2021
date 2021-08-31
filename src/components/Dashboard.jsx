@@ -1,57 +1,34 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Articles } from './Articles.jsx';
-import { getDataNews, addSearchValue, changeSorting, setPage, noChange } from './redux/actions/actions.jsx';
-import axi from './services/api.jsx';
+import { addSearchValue, changeSorting, setPage, noChange } from './redux/actions/actionsDashboard.jsx';
+import { getDataNews } from './redux/actions/actionArticles.jsx';
 
 const myKey = 'df3b0e4161374d6d9c5de1b83b9d7838';
 
-export const Dashboard = ({ dataElem }) => {
-  // const [sortBy, setSortBy] = useState('relevancy');
-  // const [searchVal, setSerchVal] = useState('');
-  const [artcls, setArtcls] = useState([]);
-  // const [page, setPage] = useState(1);
+export const Dashboard = () => {
 
-  const searchFilters = useSelector((state) => state.main);
+  const searchFilters = useSelector((state) => state.dashboard);
   const dispatch = useDispatch();
 
   const sendReq = async (e) => {
     e.preventDefault();
-    const res = await axi.get(`v2/everything?q=${searchFilters.value}&apiKey=${myKey}&sortBy=${searchFilters.sorting}&pageSize=5&page=${searchFilters.page}`);
-    setArtcls(res.data.articles);
-    dataElem(res.data.articles);
-  }
-
+    const URL = `v2/everything?q=${searchFilters.value}&apiKey=${myKey}&sortBy=${searchFilters.sorting}&pageSize=5&page=${searchFilters.page}`;
+    dispatch(getDataNews(URL));
+  };
 
   const handleChangePage = (e) => {
     e.preventDefault();
     const { value } = e.target;
-    // console.log(typeof value)
     const regexp = /\d+/;
     const matchedValue = value.match(regexp);
-    // console.log(matchedValue)
     if (matchedValue) {
       const newValue = +matchedValue[0];
-      // console.log(newValue)
       dispatch(setPage(newValue));
     } else {
       dispatch(noChange(""));
-      // console.log("not num");
     }
   };
-
-  // const changeValue = (e) => {
-  //   e.preventDefault();
-  //   const val = e.target.state;
-  // }
-
-  const change = () => {
-    dispatch(getDataNews());
-  }
-
-  const funTest = () => {
-    console.log(searchFilters.response)
-  }
 
   return (
 
@@ -71,21 +48,8 @@ export const Dashboard = ({ dataElem }) => {
         </div>
       </form>
 
-      {/* for test */}
-      <div>{searchFilters.value}</div>
-
-      <div>
-        <button onClick={change}>SEN REQ</button>
-      </div>
-
-      <div>
-        <button onClick={funTest}>CONSOLE RES</button>
-      </div>
-
-      {/* for test */}
-
       <div >
-        <Articles articles={artcls}/*  page={page} */ /* onChangePage={(pageFromInput) => setPage(pageFromInput)} */ />
+        <Articles />
       </div>
 
       <div style={{ margin: '50px 0px 0px 80px' }}>

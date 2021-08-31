@@ -1,36 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import axi from './services/api.jsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { getDataNews } from './redux/actions/actionArticles.jsx';
 import './styles/styles.css'
 
 const myKey = 'df3b0e4161374d6d9c5de1b83b9d7838';
 
-export const Details = ({ dataEl }) => {
-    const [dataTitle, setDataTitle] = useState([]);
+export const Details = () => {
+    const response = useSelector((state) => state.articles.data);
+    const dispatch = useDispatch();
 
     const { id } = useParams();
 
     useEffect(() => {
 
-        if (!dataEl.length) {
-            (async () => {
-                const res = await axi.get(`v2/everything?qInTitle=${id}&apiKey=${myKey}`);
-                if (res.data.articles.length > 1) {
-                    const newRes = res.data.articles.slice(0, 1);
-                    setDataTitle(newRes);
-                } else {
-                    setDataTitle(res.data.articles);
-                }
-            })()
-        } else {
-            setDataTitle(dataEl)
+        if (!response.length) {
+            const URL = `v2/everything?qInTitle=${id}&apiKey=${myKey}`;
+            dispatch(getDataNews(URL));
         }
     }, []);
 
-
     return (<div>
         {
-            dataTitle.filter(elem => elem.title === id).map((item, ind) => (
+            response.filter(elem => elem.title === id).slice(0, 1).map((item, ind) => (
                 <div key={ind} style={{ fontSize: "20px" }}>
                     <div> <span>Author:</span>  {item.author}</div>
                     <div> <span>Tittle:</span>  {item.title}</div>

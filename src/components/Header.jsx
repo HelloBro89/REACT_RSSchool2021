@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Switch, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
@@ -12,12 +12,10 @@ import './styles/animation.css';
 
 export const Header = () => {
     const location = useLocation();
-    const [data, setData] = useState([]);
 
     return (
 
         <div style={{ fontSize: '30px' }}>
-
             <Navigate />
 
             <TransitionGroup>
@@ -33,7 +31,7 @@ export const Header = () => {
 
                     <Switch>
                         <Route exact path="/"  >
-                            <Dashboard dataElem={(arrElem) => setData(arrElem)} />
+                            <Dashboard />
                         </Route>
 
                         <Route exact path="/about/"  >
@@ -41,7 +39,7 @@ export const Header = () => {
                         </Route>
 
                         <Route exact path='/details/:id'>
-                            <Details dataEl={data} />
+                            <Details />
                         </Route>
 
                         <Route component={NotFound} />
