@@ -1,29 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React/* , { useEffect, useState } */ from 'react';
 import { NavLink } from "react-router-dom";
 import './styles/styles.css';
 
-export const Articles = ({ articles, page, onChangePage }) => {
+export const Articles = ({ articles /* , page, */ /* onChangePage */ }) => {
 
-    const [aPage, setAPage] = useState('');
+    // const [aPage, setAPage] = useState('');
 
-    useEffect(() => {
-        setAPage(page);
-    }, [page]);
+    // useEffect(() => {
+    //     setAPage(page);
+    // }, [page]);
+    const test = () => console.log("YO")
 
-
-    const handleChange = (e) => {
-        e.preventDefault();
-        const { value } = e.target;
-        const regexp = /\d+/;
-        const matchedValue = value.match(regexp);
-        if (matchedValue) {
-            const newValue = +matchedValue[0];
-            onChangePage(newValue);
-            setAPage(newValue);
-        } else {
-            setAPage('');
-        }
-    };
+    // const handleChange = (e) => {
+    //     e.preventDefault();
+    //     const { value } = e.target;
+    //     const regexp = /\d+/;
+    //     const matchedValue = value.match(regexp);
+    //     if (matchedValue) {
+    //         const newValue = +matchedValue[0];
+    //         onChangePage(newValue);
+    //         setAPage(newValue);
+    //     } else {
+    //         setAPage('');
+    //     }
+    // };
 
     return (
         <div>
@@ -61,11 +61,11 @@ export const Articles = ({ articles, page, onChangePage }) => {
 
             </div> : null
             }
-            <div style={{ margin: '50px 0px 0px 80px' }}>
+            {/* <div style={{ margin: '50px 0px 0px 80px' }}>
                 <label htmlFor="getPage">
                     <input style={{ width: '50px', borderColor: 'red' }} name='getPage' type='text' value={aPage} onChange={e => { handleChange(e) }} />
                 </label>
-            </div>
+            </div> */}
         </div >
     )
 }

@@ -9,11 +9,12 @@ export const Details = ({ dataEl }) => {
     const [dataTitle, setDataTitle] = useState([]);
 
     const { id } = useParams();
+
     useEffect(() => {
+
         if (!dataEl.length) {
             (async () => {
                 const res = await axi.get(`v2/everything?qInTitle=${id}&apiKey=${myKey}`);
-                console.log("REFRESH");
                 if (res.data.articles.length > 1) {
                     const newRes = res.data.articles.slice(0, 1);
                     setDataTitle(newRes);
@@ -22,7 +23,6 @@ export const Details = ({ dataEl }) => {
                 }
             })()
         } else {
-            console.log(" NOT REFRESH");
             setDataTitle(dataEl)
         }
     }, []);
