@@ -8,10 +8,10 @@ export const Navigate = () => {
     const dispatch = useDispatch();
 
     return (
-        <div onClick={() => dispatch(clearData([]))}>
+        <div onClick={ () => dispatch(clearData([])) }>
             <nav>
-                <NavLink style={{ marginLeft: '40px' }} activeStyle={{ color: "green", fontWeight: "bold" }} exact to='/'  > Home </NavLink>
-                <NavLink style={{ marginLeft: '40px' }} activeStyle={{ color: "green", fontWeight: "bold" }} to='/about'> About </NavLink>
+                <NavLink style={ { marginLeft: '40px' } } activeStyle={ { color: "green", fontWeight: "bold" } } exact to='/'  > Home </NavLink>
+                <NavLink style={ { marginLeft: '40px' } } activeStyle={ { color: "green", fontWeight: "bold" } } to='/about'> About </NavLink>
             </nav >
         </div>
     )
