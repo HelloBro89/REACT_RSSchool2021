@@ -7,6 +7,7 @@
 
 .string{
   border: 1px solid blue;
+  /* border: 1px solid rgb(128, 128, 128); */
   width: 16.6%;
 }
 
@@ -19,10 +20,27 @@ span {
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  /* text-align: center; */
-  /* background-image: url("../../assets/news.jpg"); */
   background-color: rgb(37, 171, 212);
-  /* color: white; */
   border-radius: 10px;
-  /* font-size: 30px; */
+}
+
+.search {
+  height: '510px';
+  width: '400px';
+}
+
+.sub:before {
+  color: gray;
+  content: '\1F50D';
+}
+
+.test {
+  height: '50px';
+  width: '400px';
+}
+
+.mainPag {
+  width: '50px';
+  border-color: 'red';
+  background-color: brown;
 }

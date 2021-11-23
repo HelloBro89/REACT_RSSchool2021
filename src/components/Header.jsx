@@ -6,19 +6,16 @@ import { About } from "./About.jsx";
 import { Details } from "./Details.jsx";
 import { NotFound } from "./NotFound.jsx";
 import { Navigate } from './Navigate.jsx';
-import './styles/animation.css';
 
 export const Header = () => {
     const location = useLocation();
 
     return (
-
-        <div style={{ fontSize: '30px' }}>
-            <div /* className="header" */>
+        <div style={{ fontSize: '30px'}}>
+            <div>
                 <Navigate />
             </div>
             
-
             <TransitionGroup>
                 <CSSTransition
                     key={location.key}
