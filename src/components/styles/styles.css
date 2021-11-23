@@ -14,3 +14,15 @@ span {
   color: rgb(8, 114, 114);
   font-size: 25px;
 }
+
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  /* text-align: center; */
+  /* background-image: url("../../assets/news.jpg"); */
+  background-color: rgb(37, 171, 212);
+  /* color: white; */
+  border-radius: 10px;
+  /* font-size: 30px; */
+}

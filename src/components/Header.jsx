@@ -14,7 +14,10 @@ export const Header = () => {
     return (
 
         <div style={{ fontSize: '30px' }}>
-            <Navigate />
+            <div /* className="header" */>
+                <Navigate />
+            </div>
+            
 
             <TransitionGroup>
                 <CSSTransition
