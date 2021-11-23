@@ -33,7 +33,7 @@ export const Dashboard = () => {
 
   return (
 
-    <div style={{ marginTop: '40px'}}>
+    <div style={{ marginTop: '40px', height: 'auto', }}>
       <form action="" onSubmit={(e) => { sendReq(e) }}>
         <div style={{ marginBottom: '10px', marginLeft: '10%' }}>
           <input  style={{ height: '50px', width: '400px', border: '3px solid rgb(37, 171, 212)', borderRadius: '10px' }} type="search"
