@@ -37,7 +37,7 @@ export const Dashboard = () => {
       <form action="" onSubmit={(e) => { sendReq(e) }}>
         <div style={{ marginBottom: '10px', marginLeft: '10%' }}>
           <input  style={{ height: '50px', width: '400px', border: '3px solid rgb(37, 171, 212)', borderRadius: '10px' }} type="search"
-          value={searchFilters.value} autoComplete="off" placeholder="Search..." name="search" onChange={(e) => dispatch(addSearchValue(e.target.value))}/>
+          value={searchFilters.value} autoComplete="off" placeholder="Enter keyword..." name="search" onChange={(e) => dispatch(addSearchValue(e.target.value))}/>
           <button className='sub' style={{paddingBottom: '2px', width: '80px', height: '50px', border: '3px solid rgb(37, 171, 212)', borderRadius: '10px'}} type="submit"></button>
 
           <label htmlFor='sorting'>

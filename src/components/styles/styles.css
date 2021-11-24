@@ -7,9 +7,7 @@
 }
 
 .string{
-  /* text-overflow: ellipsis; */
   border: 1px solid rgb(37, 171, 212);
-  /* border: 1px solid rgb(128, 128, 128); */
   width: 16.6%;
 }
 
@@ -17,14 +15,6 @@
   font-style: italic;
   font-weight:bold;
   border: 1px solid rgb(37, 171, 212);
-  width: 16.6%;
-}
-
-.twoSting {
-  /* position: absolute;
-  top: 50%; */
-  /* margin-top: 50px; */
-  /* border: 1px solid rgb(128, 128, 128); */
   width: 16.6%;
 }
 
