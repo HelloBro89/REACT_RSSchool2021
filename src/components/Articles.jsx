@@ -12,12 +12,12 @@ export const Articles = () => {
             {response.length ? <div>
 
                 <div className='column'>
-                    <div className='string'>Author</div>
-                    <div className='string'>Tittle</div>
-                    <div className='string'>Description</div>
-                    <div className='string'>Published At</div>
-                    <div className='string'>Content</div>
-                    <div className='string'>Image</div>
+                    <div className='title' style={{width: '10%'}}>Author</div>
+                    <div className='title'>Tittle</div>
+                    <div className='title' style={{width: '25%'}}>Description</div>
+                    <div className='title' style={{width: '15%'}}>Published At</div>
+                    <div className='title'style={{width: '25%'}}>Content</div>
+                    <div className='title' style={{width: '25%'}}>Image</div>
                 </div>
 
                 {
@@ -26,13 +26,13 @@ export const Articles = () => {
                             <nav >
                                 <NavLink style={{ textDecoration: 'none', color: 'black' }} activeStyle={{ textDecoration: 'none' }} to={`details/${item.title}`}>
                                     <div className='column' id={ind} >
-                                        <div className='string'>{item.author}</div>
+                                        <div className='string' style={{width: '10%'}}>{item.author}</div>
                                         <div className='string'>{item.title}</div>
-                                        <div className='string'>{item.description}</div>
-                                        <div className='string'>{item.publishedAt}</div>
-                                        <div className='string'>{item.content}</div>
-                                        <div className='string'>
-                                            <img src={item.urlToImage} width={200} alt={item.title} />
+                                        <div className='string' style={{width: '25%'}}>{item.description}</div>
+                                        <div className='string' style={{width: '15%'}}>{item.publishedAt}</div>
+                                        <div className='string' style={{width: '25%'}}>{item.content}</div>
+                                        <div className='string' style={{width: '25%'}}>
+                                            <img src={item.urlToImage} style={{width: "100%", height:"100%" }}  alt={item.title} />
                                         </div>
                                     </div>
                                 </NavLink>

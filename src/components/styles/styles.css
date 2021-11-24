@@ -1,12 +1,29 @@
 .column {
   display: flex;
   justify-content: space-between;
+  text-align: center;
   font-size: 20px;
   margin-top: 20px;
 }
 
 .string{
-  border: 1px solid blue;
+  /* text-overflow: ellipsis; */
+  border: 1px solid rgb(37, 171, 212);
+  /* border: 1px solid rgb(128, 128, 128); */
+  width: 16.6%;
+}
+
+.title {
+  font-style: italic;
+  font-weight:bold;
+  border: 1px solid rgb(37, 171, 212);
+  width: 16.6%;
+}
+
+.twoSting {
+  /* position: absolute;
+  top: 50%; */
+  /* margin-top: 50px; */
   /* border: 1px solid rgb(128, 128, 128); */
   width: 16.6%;
 }
@@ -14,6 +31,7 @@
 span {
   color: rgb(8, 114, 114);
   font-size: 25px;
+  
 }
 
 .header {
@@ -29,5 +47,10 @@ span {
   content: '\1F50D';
 }
 
+.image {
+  margin-left: 10%;
+  width: 100%;
+  
+}
 
 

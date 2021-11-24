@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { getDataNews } from './redux/actions/actionArticles.jsx';
+import './styles/styles.css'
 
 const myKey = 'df3b0e4161374d6d9c5de1b83b9d7838';
 
@@ -23,12 +24,13 @@ export const Details = () => {
         {
             response.filter(elem => elem.title === id).slice(0, 1).map((item, ind) => (
                 <div key={ind} style={{ fontSize: "20px" }}>
-                    <div> <span>Author:</span>  {item.author}</div>
-                    <div> <span>Tittle:</span>  {item.title}</div>
-                    <div> <span>Description:</span>  {item.description}</div>
-                    <div> <span>Published At:</span>  {item.publishedAt}</div>
-                    <div> <span>Content:</span>  {item.content}</div>
-                    <div> <span>Image:</span>  <img src={item.urlToImage} width={200} alt={item.title} /></div>
+                    <div style={{marginTop: "2%"}}> <span>Author:</span>  {item.author}</div>
+                    <div style={{marginTop: "2%"}}> <span>Tittle:</span>  {item.title}</div>
+                    <div style={{marginTop: "2%"}}> <span>Description:</span>  {item.description}</div>
+                    <div style={{marginTop: "2%"}}> <span>Published At:</span>  {item.publishedAt}</div>
+                    <div style={{marginTop: "2%"}}> <span>Content:</span>  {item.content}</div>
+                    <div style={{marginTop: "2%", fontSize: "25px", color: "rgb(8, 114, 114)"}}>Image:</div>
+                    <div className='image'><img src={item.urlToImage} style={{width: "30%"}} alt={item.title} /></div>
                 </div>)
             )
         }
