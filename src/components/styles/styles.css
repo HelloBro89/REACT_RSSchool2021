@@ -24,23 +24,10 @@ span {
   border-radius: 10px;
 }
 
-.search {
-  height: '510px';
-  width: '400px';
-}
-
 .sub:before {
   color: gray;
   content: '\1F50D';
 }
 
-.test {
-  height: '50px';
-  width: '400px';
-}
 
-.mainPag {
-  width: '50px';
-  border-color: 'red';
-  background-color: brown;
-}
+
