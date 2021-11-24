@@ -1,65 +1,51 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
-  mode: 'development',
-  entry: {
-    main: '/index.jsx',
-    // testEntry: "./testEntry.js",
-  },
+  mode: 'production',
+  entry: './src/index.jsx',
+  devtool: "source-map",
   output: {
-    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: './' 
+    filename: 'bundle.js'
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './index.html',
-    }),
-    new CleanWebpackPlugin(),
-  ],
-  devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
     port: 3000,
     open: true,
   },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+},
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              esModule: true,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(png|jpg|svg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              esModule: false,
-              name: '[name].[ext]',
-              outputPath: './assets',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(tsx|jsx|js)$/,
+        test: /\.jsx/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-        },
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       },
-    ],
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+    ]
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+    template: './src/index.html',
+  }),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css'
+    }),
+    new CleanWebpackPlugin(),
+  ],
 };
