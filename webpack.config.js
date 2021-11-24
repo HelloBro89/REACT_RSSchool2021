@@ -6,7 +6,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    index: './index.jsx',
+    main: './index.jsx',
     // testEntry: "./testEntry.js",
   },
   output: {
