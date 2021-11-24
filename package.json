@@ -11,6 +11,7 @@
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "prod": "cross-env NODE_ENV=production webpack --mode production",
     "watch": "webpack --mode development --watch",
+    "build": "webpack",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
