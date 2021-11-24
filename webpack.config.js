@@ -6,13 +6,13 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    main: './index.jsx',
+    main: '/index.jsx',
     // testEntry: "./testEntry.js",
   },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/' 
+    publicPath: './' 
   },
   plugins: [
     new HtmlWebpackPlugin({
