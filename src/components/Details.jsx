@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { getDataNews } from './redux/actions/actionArticles.jsx';
-import './styles/styles.css'
 
 const myKey = 'df3b0e4161374d6d9c5de1b83b9d7838';
 
