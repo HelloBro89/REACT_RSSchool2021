@@ -8,7 +8,7 @@ export const App = () => (
             <Header />
         </div>
         <div style={{backgroundColor: 'grey', width: 'auto', height: '8vh'}}>
-            <div style={{display: 'flex',  justifyContent: 'center', paddingTop: '2vh'}}>
+            <div style={{display: 'flex',  justifyContent: 'center', paddingTop: '2%'}}>
                 <a href="https://github.com/HelloBro89/news-site-react-redux-API">Link to the app in github</a>
             </div>
             <div style={{display: 'flex', justifyContent: 'center'}}>
