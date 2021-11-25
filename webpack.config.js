@@ -3,13 +3,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+let mode = 'development'
+if (process.env.NODE_ENV === 'production') {
+    console.log(process.env.NODE_ENV);
+    mode = 'production';
+}
+
 module.exports = {
-  mode: 'production',
+  mode,
   entry: './src/index.jsx',
   devtool: "source-map",
   output: {
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    // filename: 'bundle.js'
   },
   devServer: {
     historyApiFallback: true,
