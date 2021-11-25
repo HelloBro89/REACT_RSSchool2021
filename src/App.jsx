@@ -9,7 +9,7 @@ export const App = () => (
         </div>
         <div style={{backgroundColor: 'grey', width: 'auto', height: '8vh'}}>
             <div style={{display: 'flex',  justifyContent: 'center', paddingTop: '2vh'}}>
-                <a href="https://github.com/HelloBro89/REACT_RSSchool2021/tree/set-styles">Link to the app in github</a>
+                <a href="https://github.com/HelloBro89/news-site-react-redux-API">Link to the app in github</a>
             </div>
             <div style={{display: 'flex', justifyContent: 'center'}}>
                 My email: pavelvaloshyn89@gmail.com
