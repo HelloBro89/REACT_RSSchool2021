@@ -55,9 +55,9 @@ export const Dashboard = () => {
         <Articles />
       </div>
 
-      <div style={{ marginTop: '50px', marginBottom: '20px', textAlign: 'center', position: "relative", fontSize: '15px' }}>
+      <div style={{ marginTop: '50px', /*  marginBottom: '20px', */ textAlign: 'center', position: "relative", fontSize: '15px' }}>
         <label htmlFor="getPage">
-          Page: <input name='getPage' style={{ width: '30px', height: '30px', borderColor: 'rgb(37, 171, 212)', borderRadius: '5px' }} type='text' value={searchFilters.page} onChange={e => handleChangePage(e)} />
+          Page: <input name='getPage' style={{ width: '30px', height: '30px', borderColor: 'rgb(37, 171, 212)', borderRadius: '5px', marginBottom: '20px' }} type='text' value={searchFilters.page} onChange={e => handleChangePage(e)} />
         </label>
       </div>
     </div>
