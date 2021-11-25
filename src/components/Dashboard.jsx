@@ -39,7 +39,7 @@ export const Dashboard = () => {
         <div style={{ marginBottom: '10px', marginLeft: '10%' }}>
           <input  style={{ height: '70px', width: '35%', border: '3px solid rgb(37, 171, 212)', borderRadius: '10px' }} type="search"
           value={searchFilters.value} autoComplete="off" placeholder="Enter keyword..." name="search" onChange={(e) => dispatch(addSearchValue(e.target.value))}/>
-          <button className='sub' style={{paddingBottom: '2px', width: '80px', height: '70px', border: '3px solid rgb(37, 171, 212)', borderRadius: '10px'}} type="submit"></button>
+          <button className='sub' style={{paddingBottom: '2px', marginLeft: '3px', width: '80px', height: '70px', border: '3px solid rgb(37, 171, 212)', borderRadius: '10px'}} type="submit"></button>
 
           <label htmlFor='sorting'>
             <select style={{marginLeft: '3px', border: '2px solid rgb(37, 171, 212)', borderRadius: '5px', height: '40px'}} name="sorting" value={searchFilters.sorting} onChange={(e) => dispatch(changeSorting(e.target.value))}>
