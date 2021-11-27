@@ -4,9 +4,10 @@
 &nbsp;&nbsp; *Unfortunately, if you run this application from a non-local server, most of the functionality will not work. This is due to the policy of the third-party API service used here.*
 
 # To install the application you should:
+```javascript
 1. **git clone https://github.com/HelloBro89/ToDoList.git**
 2. **npm install**
-
+```
 ## Main scripts
 - **npm run start:dev**
 - **npm run start:prod**
