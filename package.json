@@ -8,8 +8,8 @@
   },
   "scripts": {
     "start": "webpack serve --inline --hot",
-    "dev": "cross-env NODE_ENV=development webpack serve --open",
-    "prod": "cross-env NODE_ENV=production webpack serve --open",
+    "start:dev": "cross-env NODE_ENV=development webpack serve --open",
+    "start:prod": "cross-env NODE_ENV=production webpack serve --open",
     "watch": "webpack --mode development --watch",
     "build": "cross-env NODE_ENV=production webpack",
     "build:dev": "cross-env NODE_ENV=development webpack",

@@ -5,10 +5,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let mode = 'development'
 if (process.env.NODE_ENV === 'production') {
-    console.log(process.env.NODE_ENV);
     mode = 'production';
 }
-
+console.log(process.env.NODE_ENV);
 module.exports = {
   mode,
   entry: './src/index.jsx',
