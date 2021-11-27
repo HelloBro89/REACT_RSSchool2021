@@ -5,8 +5,8 @@
 
 # To install the application you should:
 ```javascript
-1. **git clone https://github.com/HelloBro89/ToDoList.git**
-2. **npm install**
+1. git clone https://github.com/HelloBro89/ToDoList.git
+2. npm install
 ```
 ## Main scripts
 - **npm run start:dev**
