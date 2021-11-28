@@ -12,7 +12,6 @@
 - **npm run start:dev**
 - **npm run start:prod**
 - **npm run build**
-
 ### In this application I used:
 - JavaScript
 - Webpack
