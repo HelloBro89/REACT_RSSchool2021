@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getDataNews } from './redux/actions/actionArticles.jsx';
 import './styles/styles.css';
 
-const myKey = 'df3b0e4161374d6d9c5de1b83b9d7838';
+const myKey = 'd4f82bedc4e94e218817ff78386406bc';
 
 export const Details = () => {
   const response = useSelector((state) => state.articles.data);
@@ -13,6 +13,8 @@ export const Details = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    // console.log(`ID - ${id} --MYKEY - ${myKey} `);
+    // console.log(`v2/everything?qInTitle=${id}&apiKey=${myKey}`);
     if (!response.length) {
       const URL = `v2/everything?qInTitle=${id}&apiKey=${myKey}`;
       dispatch(getDataNews(URL));
