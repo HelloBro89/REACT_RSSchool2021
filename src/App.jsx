@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  /* BrowserRouter as Router , */ /* HashRouter, */ MemoryRouter,
+  BrowserRouter as Router /* HashRouter */ /* MemoryRouter */,
 } from 'react-router-dom';
 import { Header } from './components/Header.jsx';
 
 export const App = () => (
-  <MemoryRouter>
+  <Router>
     <div
       style={{
         backgroundColor: 'rgba(128, 128, 128, 0.250)',
@@ -32,5 +32,5 @@ export const App = () => (
         My email: pavelvaloshyn89@gmail.com
       </div>
     </div>
-  </MemoryRouter>
+  </Router>
 );
