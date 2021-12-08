@@ -5,7 +5,8 @@ import { App } from './App.jsx';
 import store from './components/store/store.jsx';
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>
-    , document.querySelector('#root'));
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.querySelector('#root')
+);
