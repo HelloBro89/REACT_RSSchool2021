@@ -8,7 +8,7 @@
 
 # To install the application you should:
 
-- [Link to youtube with demo this app](https://www.youtube.com/watch?v=vOdVmTEL0BM)
+- [Link to youtube with demo this app](https://www.youtube.com/watch?v=2RytxCzXzKM)
 
 ```javascript
 1. git clone https://github.com/HelloBro89/ToDoList.git
